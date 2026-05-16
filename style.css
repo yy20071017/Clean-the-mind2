@@ -1,0 +1,602 @@
+html {
+    scroll-behavior: smooth;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    background-image:
+        linear-gradient(rgba(5,5,20,0.75), rgba(5,5,20,0.75)),
+        url("images/bg.png");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    color: white;
+    font-family: 'Noto Sans SC', sans-serif;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* 背景光 */
+
+.light {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: -1;
+}
+
+.light1 {
+
+    width: 700px;
+    height: 700px;
+
+    background: rgba(255, 120, 220, 0.18);
+
+    top: -150px;
+    left: -200px;
+}
+
+.light2 {
+
+    width: 800px;
+    height: 800px;
+
+    background: rgba(120, 100, 255, 0.18);
+
+    bottom: -300px;
+    right: -250px;
+}
+
+/* 导航栏 */
+
+header {
+    width: 100%;
+    padding: 25px 80px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    backdrop-filter: blur(15px);
+    background: rgba(255,255,255,0.05);
+
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 900;
+    color: #ffb3f5;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 40px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ff8be7;
+}
+
+/* 首页 */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.small-title {
+    letter-spacing: 10px;
+    color: #ffb3f5;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 120px;
+    font-weight: 900;
+
+    background: linear-gradient(to right, #ffd6fa, #ffffff, #d7b6ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    margin-bottom: 40px;
+}
+
+.hero-box {
+    width: 800px;
+    max-width: 90%;
+
+    padding: 40px;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    border-radius: 30px;
+
+    backdrop-filter: blur(20px);
+
+    line-height: 40px;
+    font-size: 22px;
+    color: #e8e8e8;
+}
+
+.buttons {
+    margin-top: 50px;
+}
+
+button {
+    padding: 18px 40px;
+    border: none;
+    border-radius: 50px;
+
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn1 {
+
+    display: inline-block;
+
+    padding: 20px 55px;
+
+    border-radius: 60px;
+
+    text-decoration: none;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,120,220,0.9),
+            rgba(140,100,255,0.9)
+        );
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 0 20px rgba(255,120,220,0.45),
+        0 0 60px rgba(140,100,255,0.25);
+
+    transition: all 0.4s ease;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.btn1::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            120deg,
+            transparent,
+            rgba(255,255,255,0.4),
+            transparent
+        );
+
+    transition: 0.6s;
+}
+
+.btn1:hover {
+
+    transform:
+        translateY(-5px)
+        scale(1.05);
+
+    box-shadow:
+        0 0 30px rgba(255,120,220,0.7),
+        0 0 80px rgba(140,100,255,0.45);
+}
+
+.btn1:hover::before {
+    left: 120%;
+}
+
+
+/* 成员 */
+
+.members::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(255,255,255,0.04);
+
+    backdrop-filter: blur(8px);
+
+    z-index: -1;
+}
+
+.members {
+    padding: 100px 80px;
+    position: relative;
+    z-index: 2;
+
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.title h2 {
+    font-size: 60px;
+    color: #ffb3f5;
+}
+
+.title p {
+    color: #aaa;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.card-container {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+
+    width: 350px;
+
+    background: rgba(255,255,255,0.08);
+
+    border-radius: 35px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255,255,255,0.18);
+
+    backdrop-filter: blur(25px);
+
+    -webkit-backdrop-filter: blur(25px);
+
+    box-shadow:
+        0 8px 32px rgba(0,0,0,0.25),
+        inset 0 0 1px rgba(255,255,255,0.3);
+
+    transition: 0.5s;
+}
+
+.card:hover {
+
+    transform:
+        translateY(-15px)
+        scale(1.02);
+
+    border-color: rgba(255,255,255,0.4);
+
+    box-shadow:
+        0 20px 50px rgba(255,150,255,0.25);
+}
+
+.card img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+
+    transition: 0.5s;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+.card-text {
+    padding: 30px;
+}
+
+.card-text h3 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.card-text p {
+
+    color: rgba(255,255,255,0.72);
+
+    line-height: 32px;
+
+    margin-bottom: 25px;
+}
+
+.quote {
+    padding: 18px;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.06);
+
+    color: #ffcaef;
+
+    line-height: 30px;
+}
+
+/* 关于 */
+
+.about {
+    margin: 100px 80px;
+
+    padding: 70px;
+
+    border-radius: 40px;
+
+    text-align: center;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    backdrop-filter: blur(20px);
+}
+
+.about h2 {
+    font-size: 60px;
+    margin-bottom: 40px;
+    color: #dcb8ff;
+}
+
+.about p {
+    font-size: 22px;
+    color: #d8d8d8;
+    line-height: 45px;
+}
+
+/* 页脚 */
+
+footer {
+    padding: 40px;
+    text-align: center;
+    color: #888;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.card-link{
+    text-decoration: none;
+    color: white;
+}
+
+/* 成员详情页 */
+
+.detail-page{
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 150px 80px;
+}
+
+.detail-card{
+
+    width: 1400px;
+    max-width: 100%;
+
+    display: flex;
+    gap: 60px;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    border-radius: 40px;
+
+    padding: 50px;
+
+    backdrop-filter: blur(25px);
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,0.3);
+}
+
+.detail-img{
+
+    width: 450px;
+    height: 700px;
+
+    object-fit: cover;
+
+    border-radius: 30px;
+}
+
+.detail-text{
+    flex: 1;
+}
+
+.detail-text h1{
+
+    font-size: 80px;
+
+    color: #ffd6fa;
+
+    margin-bottom: 20px;
+}
+
+.detail-quote{
+
+    font-size: 24px;
+
+    color: #ffb3f5;
+
+    margin-bottom: 40px;
+}
+
+.detail-intro{
+
+    line-height: 42px;
+
+    color: rgba(255,255,255,0.8);
+
+    font-size: 20px;
+}
+
+.audio-box{
+
+    margin-top: 50px;
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    background: rgba(255,255,255,0.05);
+}
+
+.audio-box h3{
+
+    margin-bottom: 20px;
+
+    font-size: 28px;
+}
+
+audio{
+    width: 100%;
+}
+
+/* 成员详情页 */
+
+.detail-page{
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 150px 80px;
+}
+
+.detail-card{
+
+    width: 1400px;
+    max-width: 100%;
+
+    display: flex;
+    gap: 60px;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    border-radius: 40px;
+
+    padding: 50px;
+
+    backdrop-filter: blur(25px);
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,0.3);
+}
+
+.detail-img{
+
+    width: 450px;
+    height: 700px;
+
+    object-fit: cover;
+
+    border-radius: 30px;
+}
+
+.detail-text{
+    flex: 1;
+}
+
+.detail-text h1{
+
+    font-size: 80px;
+
+    color: #ffd6fa;
+
+    margin-bottom: 20px;
+}
+
+.detail-quote{
+
+    font-size: 24px;
+
+    color: #ffb3f5;
+
+    margin-bottom: 40px;
+}
+
+.detail-intro{
+
+    line-height: 42px;
+
+    color: rgba(255,255,255,0.8);
+
+    font-size: 20px;
+}
+
+.audio-box{
+
+    margin-top: 50px;
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    background: rgba(255,255,255,0.05);
+}
+
+.audio-box h3{
+
+    margin-bottom: 20px;
+
+    font-size: 28px;
+}
+
+audio{
+    width: 100%;
+}
+

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>海苔 - 心事清零</title>
+    <link rel="icon" href="favicon.ico">
 
     <link rel="stylesheet" href="style.css">
 
@@ -13,7 +14,7 @@
         rel="stylesheet">
 </head>
 
-<body>
+<body style="background-image: linear-gradient(rgba(5,5,20,0.75), rgba(5,5,20,0.75)), url('./images/ht.jpg'); background-size: cover; background-position: center; background-attachment: fixed; background-repeat: no-repeat;">
 
     <!-- 背景光 -->
     <div class="light light1"></div>
@@ -24,16 +25,16 @@
         <div class="logo">心事清零</div>
 
         <nav>
-            <a href="index.html">返回首页</a>
+            <a href="index.html#members">返回首页</a>
         </nav>
     </header>
 
      <!-- 详情页 -->
-    <section class="detail-page">
+    <section class="detail-page" style="justify-content: flex-start; padding-left: 40px;">
 
-        <div class="detail-card">
+        <div class="detail-card" style="background: transparent; border: none; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none;">
 
-            <img src="3.jpg" class="detail-img">
+            <img src="./images/3.jpg" class="detail-img">
 
             <div class="detail-text">
 
@@ -57,20 +58,17 @@
 在心事清零中， 海苔不仅仅只是成员之一。 他更像是整个深夜氛围里最特别的一部分。
                 </p>
 
-                <!-- 音频 -->
-                <div class="audio-box">
-                    <h3>成员音频</h3>
-
-                    <audio controls>
-                        <source src="audio/haitai.mp3" type="audio/mpeg">
-                    </audio>
-                </div>
-
             </div>
 
         </div>
 
     </section>
+
+    <div style="position: absolute; left: 50%; transform: translateX(-50%); bottom: 40px; width: min(760px, calc(100% - 40px)); margin: 0 auto;">
+        <audio controls style="width: 100%;">
+            <source src="audio/haitai.mp3" type="audio/mpeg">
+        </audio>
+    </div>
 
 </body>
 </html>
